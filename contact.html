@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا | الجمعية الثقافية الشبابية بصمة</title>
+    
+    <link rel="icon" type="image/x-icon" href="photos/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css" id="dark-mode-style" disabled>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- ========== شريط التنقل ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="photos/logo.png" alt="بصمة" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <span class="logo-text-fallback">🟢 بصمة</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link" data-translate="home">الرئيسية</a></li>
+                <li><a href="about.html" class="nav-link" data-translate="about">من نحن</a></li>
+                <li><a href="members.html" class="nav-link" data-translate="members">الأعضاء</a></li>
+                <li><a href="announcements.html" class="nav-link" data-translate="announcements">الإعلانات</a></li>
+                <li><a href="goals.html" class="nav-link" data-translate="goals">أهدافنا</a></li>
+                <li><a href="projects.html" class="nav-link" data-translate="projects">أعمالنا</a></li>
+                <li><a href="contact.html" class="nav-link active" data-translate="contact">اتصل بنا</a></li>
+            </ul>
+            
+            <div class="nav-controls">
+                <button class="control-btn lang-btn" id="langToggle" title="Switch to English">
+                    <span class="lang-text">EN</span>
+                </button>
+                <button class="control-btn dark-btn" id="darkToggle" title="الوضع الليلي">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="control-btn menu-btn" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- ========== رأس الصفحة ========== -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title" data-translate="contact_title">اتصل بنا</h1>
+            <p class="page-subtitle" data-translate="contact_subtitle">نحن هنا للإجابة على استفساراتكم وتلقي اقتراحاتكم</p>
+        </div>
+    </section>
+    
+    <!-- ========== محتوى الاتصال ========== -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                
+                <!-- معلومات التواصل -->
+                <div class="contact-info-side">
+                    <h2 data-translate="contact_info_title">معلومات التواصل</h2>
+                    
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h4 data-translate="address_label">العنوان</h4>
+                            <p data-translate="address">دار الشباب زواوي بغدادي، بومدفع</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4 data-translate="email_label">البريد الإلكتروني</h4>
+                            <p><a href="mailto:Basmaboumedfaa@gmail.com">Basmaboumedfaa@gmail.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <h4 data-translate="phone_label">الهاتف</h4>
+                            <p><a href="tel:+213776024950">0776024950</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon"><i class="fab fa-facebook-f"></i></div>
+                        <div>
+                            <h4 data-translate="facebook_label">فيسبوك</h4>
+                            <p><a href="https://www.facebook.com/profile.php?id=61579320686368" target="_blank" rel="noopener">صفحة الجمعية</a></p>
+                        </div>
+                    </div>
+                    
+                    <!-- وسائل التواصل الاجتماعي -->
+                    <div class="contact-social">
+                        <h4 data-translate="follow_us">تابعنا</h4>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/profile.php?id=61579320686368" class="social-link" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                            <a href="mailto:Basmaboumedfaa@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                            <a href="tel:+213776024950" class="social-link"><i class="fas fa-phone"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- نموذج التواصل -->
+                <div class="contact-form-side">
+                    <h2 data-translate="send_message">أرسل رسالة</h2>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name" data-translate="name_label">الاسم الكامل</label>
+                            <input type="text" id="name" name="name" placeholder="أدخل اسمك الكامل" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-translate="email_label">البريد الإلكتروني</label>
+                            <input type="email" id="email" name="email" placeholder="أدخل بريدك الإلكتروني" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" data-translate="subject_label">الموضوع</label>
+                            <input type="text" id="subject" name="subject" placeholder="موضوع الرسالة" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-translate="message_label">الرسالة</label>
+                            <textarea id="message" name="message" rows="5" placeholder="اكتب رسالتك هنا..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" data-translate="send_btn">إرسال الرسالة</button>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========== تذييل ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3 class="footer-logo">🟢 بصمة</h3>
+                    <p data-translate="footer_desc">الجمعية الثقافية الشبابية بصمة - بلدية بومدفع - دار الشباب زواوي بغدادي</p>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="quick_links">روابط سريعة</h4>
+                    <ul>
+                        <li><a href="about.html" data-translate="about">من نحن</a></li>
+                        <li><a href="members.html" data-translate="members">الأعضاء</a></li>
+                        <li><a href="announcements.html" data-translate="announcements">الإعلانات</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="contact_us">اتصل بنا</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:Basmaboumedfaa@gmail.com">Basmaboumedfaa@gmail.com</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+213776024950">0776024950</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> <span data-translate="address">دار الشباب زواوي بغدادي، بومدفع</span></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="follow_us">تابعنا</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61579320686368" class="social-link" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                        <a href="mailto:Basmaboumedfaa@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:+213776024950" class="social-link"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> <span data-translate="association_full_name">الجمعية الثقافية الشبابية بصمة</span> - <span data-translate="rights">جميع الحقوق محفوظة</span></p>
+            </div>
+        </div>
+    </footer>
+    
+    <button class="scroll-top-btn" id="scrollTopBtn"><i class="fas fa-chevron-up"></i></button>
+    
+    <script src="js/translations.js"></script>
+    <script src="js/dark-mode.js"></script>
+    <script src="js/script.js"></script>
+    
+    <!-- معالجة نموذج الاتصال -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('شكراً على رسالتك! سنتواصل معك قريباً.\n\nThank you for your message! We will contact you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

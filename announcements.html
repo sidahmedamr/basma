@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الإعلانات | الجمعية الثقافية الشبابية بصمة</title>
+    
+    <link rel="icon" type="image/x-icon" href="photos/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css" id="dark-mode-style" disabled>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- ========== شريط التنقل ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="photos/logo.png" alt="بصمة" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <span class="logo-text-fallback">🟢 بصمة</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link" data-translate="home">الرئيسية</a></li>
+                <li><a href="about.html" class="nav-link" data-translate="about">من نحن</a></li>
+                <li><a href="members.html" class="nav-link" data-translate="members">الأعضاء</a></li>
+                <li><a href="announcements.html" class="nav-link active" data-translate="announcements">الإعلانات</a></li>
+                <li><a href="goals.html" class="nav-link" data-translate="goals">أهدافنا</a></li>
+                <li><a href="projects.html" class="nav-link" data-translate="projects">أعمالنا</a></li>
+                <li><a href="contact.html" class="nav-link" data-translate="contact">اتصل بنا</a></li>
+            </ul>
+            
+            <div class="nav-controls">
+                <button class="control-btn lang-btn" id="langToggle" title="Switch to English">
+                    <span class="lang-text">EN</span>
+                </button>
+                <button class="control-btn dark-btn" id="darkToggle" title="الوضع الليلي">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="control-btn menu-btn" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- ========== رأس الصفحة ========== -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title" data-translate="announcements_title">الإعلانات والمنشورات</h1>
+            <p class="page-subtitle" data-translate="announcements_subtitle">آخر أخبار وفعاليات الجمعية الثقافية الشبابية بصمة</p>
+        </div>
+    </section>
+    
+    <!-- ========== قائمة الإعلانات ========== -->
+    <section class="announcements-section">
+        <div class="container">
+            <div class="announcements-grid">
+                
+                <!-- إعلان 1 (نموذج) -->
+                <article class="announcement-card">
+                    <div class="announcement-img">
+                        <img src="photos/announcements/announcement1.jpg" alt="إعلان" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="announcement-img-placeholder" style="display:none;">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                    </div>
+                    <div class="announcement-body">
+                        <div class="announcement-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>01 يونيو 2025</span>
+                        </div>
+                        <h3>افتتاح الموسم الثقافي الجديد</h3>
+                        <p>يسر الجمعية الثقافية الشبابية بصمة أن تعلن عن افتتاح موسمها الثقافي الجديد... <br><em>(هذا نموذج إعلان - قم بتعديله)</em></p>
+                        <a href="#" class="read-more-btn">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                </article>
+                
+                <!-- إعلان 2 (نموذج) -->
+                <article class="announcement-card">
+                    <div class="announcement-img">
+                        <img src="photos/announcements/announcement2.jpg" alt="إعلان" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="announcement-img-placeholder" style="display:none;">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                    </div>
+                    <div class="announcement-body">
+                        <div class="announcement-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>15 مايو 2025</span>
+                        </div>
+                        <h3>ورشة تدريبية في الإعلام الآلي</h3>
+                        <p>تنظم الجمعية ورشة تدريبية حول أساسيات الإعلام الآلي لفائدة الشباب... <br><em>(هذا نموذج إعلان - قم بتعديله)</em></p>
+                        <a href="#" class="read-more-btn">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                </article>
+                
+                <!-- إعلان 3 (نموذج) -->
+                <article class="announcement-card">
+                    <div class="announcement-img">
+                        <img src="photos/announcements/announcement3.jpg" alt="إعلان" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="announcement-img-placeholder" style="display:none;">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                    </div>
+                    <div class="announcement-body">
+                        <div class="announcement-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>01 مايو 2025</span>
+                        </div>
+                        <h3>حملة تنظيف وتشجير</h3>
+                        <p>في إطار النشاطات البيئية، تطلق الجمعية حملة تنظيف وتشجير واسعة... <br><em>(هذا نموذج إعلان - قم بتعديله)</em></p>
+                        <a href="#" class="read-more-btn">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                </article>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========== تذييل ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3 class="footer-logo">🟢 بصمة</h3>
+                    <p data-translate="footer_desc">الجمعية الثقافية الشبابية بصمة - بلدية بومدفع - دار الشباب زواوي بغدادي</p>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="quick_links">روابط سريعة</h4>
+                    <ul>
+                        <li><a href="about.html" data-translate="about">من نحن</a></li>
+                        <li><a href="members.html" data-translate="members">الأعضاء</a></li>
+                        <li><a href="announcements.html" data-translate="announcements">الإعلانات</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="contact_us">اتصل بنا</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:Basmaboumedfaa@gmail.com">Basmaboumedfaa@gmail.com</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+213776024950">0776024950</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> <span data-translate="address">دار الشباب زواوي بغدادي، بومدفع</span></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="follow_us">تابعنا</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61579320686368" class="social-link" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                        <a href="mailto:Basmaboumedfaa@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:+213776024950" class="social-link"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> <span data-translate="association_full_name">الجمعية الثقافية الشبابية بصمة</span> - <span data-translate="rights">جميع الحقوق محفوظة</span></p>
+            </div>
+        </div>
+    </footer>
+    
+    <button class="scroll-top-btn" id="scrollTopBtn"><i class="fas fa-chevron-up"></i></button>
+    
+    <script src="js/translations.js"></script>
+    <script src="js/dark-mode.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

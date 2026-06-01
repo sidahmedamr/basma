@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من نحن | الجمعية الثقافية الشبابية بصمة</title>
+    
+    <link rel="icon" type="image/x-icon" href="photos/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css" id="dark-mode-style" disabled>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- ========== شريط التنقل ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="photos/logo.png" alt="بصمة" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <span class="logo-text-fallback">🟢 بصمة</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link" data-translate="home">الرئيسية</a></li>
+                <li><a href="about.html" class="nav-link active" data-translate="about">من نحن</a></li>
+                <li><a href="members.html" class="nav-link" data-translate="members">الأعضاء</a></li>
+                <li><a href="announcements.html" class="nav-link" data-translate="announcements">الإعلانات</a></li>
+                <li><a href="goals.html" class="nav-link" data-translate="goals">أهدافنا</a></li>
+                <li><a href="projects.html" class="nav-link" data-translate="projects">أعمالنا</a></li>
+                <li><a href="contact.html" class="nav-link" data-translate="contact">اتصل بنا</a></li>
+            </ul>
+            
+            <div class="nav-controls">
+                <button class="control-btn lang-btn" id="langToggle" title="Switch to English">
+                    <span class="lang-text">EN</span>
+                </button>
+                <button class="control-btn dark-btn" id="darkToggle" title="الوضع الليلي">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="control-btn menu-btn" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- ========== رأس الصفحة ========== -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title" data-translate="about_title">من نحن</h1>
+            <p class="page-subtitle" data-translate="about_subtitle">تعرف على الجمعية الثقافية الشبابية بصمة</p>
+        </div>
+    </section>
+    
+    <!-- ========== المحتوى ========== -->
+    <section class="about-content-section">
+        <div class="container">
+            
+            <!-- قصة التأسيس -->
+            <div class="about-block">
+                <div class="about-text">
+                    <h2 data-translate="our_story">قصتنا</h2>
+                    <p data-translate="story_text_1">
+                        تأسست الجمعية الثقافية الشبابية "بصمة" في بلدية بومدفع، انطلاقاً من إيمان مجموعة من الشباب الطموح
+                        بأهمية العمل الجمعوي في تنمية المجتمع وتطوير قدرات الشباب.
+                    </p>
+                    <p data-translate="story_text_2">
+                        جاءت فكرة التأسيس من الحاجة الملحة لخلق فضاء شبابي يجمع بين الثقافة والترفيه والتطوع،
+                        ويكون منصة لإبراز مواهب وإبداعات شباب المنطقة.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="photos/about-story.jpg" alt="قصة التأسيس" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="about-image-placeholder" style="display:none;">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- الرؤية والرسالة -->
+            <div class="about-block reverse">
+                <div class="about-text">
+                    <h2 data-translate="vision_mission">رؤيتنا ورسالتنا</h2>
+                    <div class="vision-box">
+                        <h3 data-translate="vision">رؤيتنا</h3>
+                        <p data-translate="vision_text">
+                            بناء مجتمع شبابي واعٍ، مبدع، وفاعل يساهم في التنمية المحلية ويحمل قيماً إيجابية.
+                        </p>
+                    </div>
+                    <div class="mission-box">
+                        <h3 data-translate="mission">رسالتنا</h3>
+                        <p data-translate="mission_text">
+                            تأطير الشباب وتنمية مهاراتهم من خلال أنشطة ثقافية، تربوية، وتطوعية هادفة،
+                            وخلق بيئة محفزة للإبداع والمبادرة.
+                        </p>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="photos/about-vision.jpg" alt="الرؤية والرسالة" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="about-image-placeholder" style="display:none;">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- القيم -->
+            <div class="values-section">
+                <h2 class="section-title" data-translate="our_values">قيمنا</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon"><i class="fas fa-handshake"></i></div>
+                        <h3 data-translate="value1_title">العمل الجماعي</h3>
+                        <p data-translate="value1_text">نؤمن بأن العمل بروح الفريق هو مفتاح النجاح</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
+                        <h3 data-translate="value2_title">الإبداع</h3>
+                        <p data-translate="value2_text">نشجع الأفكار الجديدة ونحتضن المواهب</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon"><i class="fas fa-heart"></i></div>
+                        <h3 data-translate="value3_title">التطوع</h3>
+                        <p data-translate="value3_text">العطاء بدون مقابل هو جوهر عملنا</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon"><i class="fas fa-balance-scale"></i></div>
+                        <h3 data-translate="value4_title">المسؤولية</h3>
+                        <p data-translate="value4_text">نلتزم تجاه مجتمعنا ونسعى لإحداث أثر إيجابي</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- ========== تذييل ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3 class="footer-logo">🟢 بصمة</h3>
+                    <p data-translate="footer_desc">الجمعية الثقافية الشبابية بصمة - بلدية بومدفع - دار الشباب زواوي بغدادي</p>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="quick_links">روابط سريعة</h4>
+                    <ul>
+                        <li><a href="about.html" data-translate="about">من نحن</a></li>
+                        <li><a href="members.html" data-translate="members">الأعضاء</a></li>
+                        <li><a href="announcements.html" data-translate="announcements">الإعلانات</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="contact_us">اتصل بنا</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:Basmaboumedfaa@gmail.com">Basmaboumedfaa@gmail.com</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+213776024950">0776024950</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> <span data-translate="address">دار الشباب زواوي بغدادي، بومدفع</span></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="follow_us">تابعنا</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61579320686368" class="social-link" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                        <a href="mailto:Basmaboumedfaa@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:+213776024950" class="social-link"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> <span data-translate="association_full_name">الجمعية الثقافية الشبابية بصمة</span> - <span data-translate="rights">جميع الحقوق محفوظة</span></p>
+            </div>
+        </div>
+    </footer>
+    
+    <button class="scroll-top-btn" id="scrollTopBtn"><i class="fas fa-chevron-up"></i></button>
+    
+    <script src="js/translations.js"></script>
+    <script src="js/dark-mode.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

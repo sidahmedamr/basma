@@ -66,7 +66,7 @@ const translations = {
         
         // الأعمال
         projects_title: 'أعمالنا ومشاريعنا',
-        projects_subtitle: 'نماذج من الأنشطة والمشاريع التي أنجزتها الجمعية',
+        projects_subtitle: 'سجل إنجازات وأنشطة الجمعية الثقافية الشبابية بصمة',
         cat_cultural: 'ثقافي',
         cat_training: 'تكويني',
         cat_environmental: 'بيئي',
@@ -186,7 +186,7 @@ const translations = {
         
         // Projects
         projects_title: 'Our Work & Projects',
-        projects_subtitle: 'Examples of activities and projects accomplished by the association',
+        projects_subtitle: 'Record of achievements and activities of Basma Cultural Youth Association',
         cat_cultural: 'Cultural',
         cat_training: 'Training',
         cat_environmental: 'Environmental',

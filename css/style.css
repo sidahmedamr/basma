@@ -959,6 +959,7 @@ html[dir="ltr"] .goal-item:hover {
 
 .project-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(76, 175, 80, 0.2);
 }
 
 .project-img {
@@ -970,7 +971,7 @@ html[dir="ltr"] .goal-item:hover {
     justify-content: center;
 }
 
-.project-img img {
+.proj-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -981,29 +982,42 @@ html[dir="ltr"] .goal-item:hover {
     color: var(--primary);
 }
 
-.project-info {
+.project-body {
     padding: 20px;
 }
 
-.project-category {
-    display: inline-block;
-    padding: 4px 12px;
-    background: var(--primary-bg);
-    color: var(--primary);
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 700;
+.project-date {
+    font-size: 0.85rem;
+    color: #888;
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.project-info h3 {
-    margin-bottom: 8px;
+.project-body h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
     color: var(--gray-800);
 }
 
-.project-info p {
-    font-size: 0.9rem;
+.project-body p {
+    font-size: 0.95rem;
     color: #666;
+    line-height: 1.7;
+}
+
+/* تجاوب */
+@media (max-width: 992px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ========== صفحة اتصل بنا ========== */

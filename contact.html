@@ -94,7 +94,6 @@
                         </div>
                     </div>
                     
-                    <!-- وسائل التواصل الاجتماعي -->
                     <div class="contact-social">
                         <h4 data-translate="follow_us">تابعنا</h4>
                         <div class="social-links">
@@ -178,13 +177,43 @@
     <script src="js/dark-mode.js"></script>
     <script src="js/script.js"></script>
     
-    <!-- معالجة نموذج الاتصال -->
+    <!-- ========== EmailJS ========== -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('شكراً على رسالتك! سنتواصل معك قريباً.\n\nThank you for your message! We will contact you soon.');
-            this.reset();
-        });
+        (function() {
+            // ========== ضع مفاتيحك هنا ==========
+            emailjs.init("H_41ha5NuuYz0rj14");
+            
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'جاري الإرسال...';
+                submitBtn.disabled = true;
+                
+                const templateParams = {
+                    from_name: document.getElementById('name').value,
+                    from_email: document.getElementById('email').value,
+                    subject: document.getElementById('subject').value,
+                    message: document.getElementById('message').value
+                };
+                
+                emailjs.send("service_fl4lu2h", "template_iwc9ymh", templateParams)
+                    .then(function(response) {
+                        alert('✅ تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.\n\nMessage sent successfully!');
+                        document.getElementById('contactForm').reset();
+                    })
+                    .catch(function(error) {
+                        alert('❌ حدث خطأ في الإرسال. يرجى المحاولة لاحقاً أو التواصل عبر الإيميل مباشرة.\n\nError sending message. Please try again.');
+                        console.error('EmailJS Error:', error);
+                    })
+                    .finally(function() {
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    });
+            });
+        })();
     </script>
 </body>
 </html>

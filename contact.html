@@ -92,7 +92,7 @@
                 </div>
             </div>
             
-            <!-- ========== النموذجين جنباً إلى جنب ========== -->
+            <!-- ========== النموذجين ========== -->
             <div class="forms-grid">
                 
                 <!-- ========== نموذج التواصل العام ========== -->
@@ -102,7 +102,7 @@
                         <h2 data-translate="send_message">أرسل رسالة</h2>
                         <p data-translate="contact_form_desc">للاستفسارات العامة والاقتراحات</p>
                     </div>
-                    <form class="contact-form" id="contactForm">
+                    <form class="contact-form" id="contactForm" onsubmit="return false;">
                         <div class="form-group">
                             <label for="c_name" data-translate="name_label">الاسم الكامل</label>
                             <input type="text" id="c_name" name="c_name" placeholder="أدخل اسمك الكامل" required>
@@ -119,7 +119,7 @@
                             <label for="c_message" data-translate="message_label">الرسالة</label>
                             <textarea id="c_message" name="c_message" rows="4" placeholder="اكتب رسالتك هنا..." required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary" data-translate="send_btn">إرسال الرسالة</button>
+                        <button type="button" class="btn btn-primary" id="contactSubmitBtn" data-translate="send_btn">إرسال الرسالة</button>
                     </form>
                 </div>
                 
@@ -130,7 +130,7 @@
                         <h2 data-translate="join_title">انضم إلى الجمعية</h2>
                         <p data-translate="join_form_desc">قدم طلب انضمامك لفريق بصمة</p>
                     </div>
-                    <form class="contact-form" id="joinForm">
+                    <form class="contact-form" id="joinForm" onsubmit="return false;">
                         <div class="form-group">
                             <label for="j_name" data-translate="name_label">الاسم الكامل</label>
                             <input type="text" id="j_name" name="j_name" placeholder="أدخل اسمك الثلاثي" required>
@@ -161,7 +161,7 @@
                             <label for="j_motivation" data-translate="motivation_label">لماذا تريد الانضمام؟</label>
                             <textarea id="j_motivation" name="j_motivation" rows="3" placeholder="اكتب دوافعك للانضمام للجمعية..."></textarea>
                         </div>
-                        <button type="submit" class="btn btn-join" data-translate="join_btn">تقديم طلب الانضمام</button>
+                        <button type="button" class="btn btn-join" id="joinSubmitBtn" data-translate="join_btn">تقديم طلب الانضمام</button>
                     </form>
                 </div>
                 
@@ -218,112 +218,142 @@
     <!-- ========== EmailJS + Telegram Bot ========== -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
+        // ========== إعدادات ==========
+        const TELEGRAM_BOT_TOKEN = "8915229132:AAGWlzmu41aFfJBYqOSCSSvSGy5Dxo0OiTg";
+        const TELEGRAM_CHAT_ID = "-1003813357532";
+        
+        // EmailJS
         (function() {
-            
-            // ========== إعدادات ==========
-            const TELEGRAM_BOT_TOKEN = "8915229132:AAGWlzmu41aFfJBYqOSCSSvSGy5Dxo0OiTg";
-            const TELEGRAM_CHAT_ID = "const TELEGRAM_CHAT_ID = "-1003813357532";";
-            
-            // EmailJS
             emailjs.init("H_41ha5NuuYz0rj14");
+        })();
+        
+        // ========== إرسال لتليجرام ==========
+        async function sendToTelegram(joinData) {
+            const message = "🔔 *طلب انضمام جديد*\\n\\n" +
+                "👤 *الاسم:* " + joinData.name + "\\n" +
+                "🎂 *العمر:* " + joinData.age + "\\n" +
+                "📍 *الولاية:* " + joinData.wilaya + "\\n" +
+                "📞 *الهاتف:* " + joinData.phone + "\\n" +
+                "📧 *البريد:* " + joinData.email + "\\n" +
+                "🛠️ *المهارات:* " + joinData.skills + "\\n\\n" +
+                "💬 *لماذا يريد الانضمام:*\\n" + joinData.motivation + "\\n\\n" +
+                "📅 *التاريخ:* " + new Date().toLocaleDateString('ar-DZ');
             
-            // ========== إرسال طلب انضمام لتليجرام ==========
-            async function sendJoinRequestToTelegram(joinData) {
-                
-                const message = `🔔 *طلب انضمام جديد*\n\n👤 *الاسم:* ${joinData.name}\n🎂 *العمر:* ${joinData.age}\n📍 *الولاية:* ${joinData.wilaya}\n📞 *الهاتف:* ${joinData.phone}\n📧 *البريد:* ${joinData.email}\n🛠️ *المهارات:* ${joinData.skills}\n\n💬 *لماذا يريد الانضمام:*\n${joinData.motivation}\n\n📅 *التاريخ:* ${new Date().toLocaleDateString('ar-DZ')}`;
-                
-                try {
-                    const response = await fetch(
-                        `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
-                        {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({
-                                chat_id: TELEGRAM_CHAT_ID,
-                                text: message,
-                                parse_mode: 'Markdown'
-                            })
-                        }
-                    );
-                    const data = await response.json();
-                    
-                    if (data.ok) {
-                        return { success: true };
-                    } else {
-                        return { success: false, error: data.description };
+            try {
+                const response = await fetch(
+                    "https://api.telegram.org/bot" + TELEGRAM_BOT_TOKEN + "/sendMessage",
+                    {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            chat_id: TELEGRAM_CHAT_ID,
+                            text: message,
+                            parse_mode: 'Markdown'
+                        })
                     }
-                } catch (error) {
-                    console.error('Telegram Error:', error);
-                    return { success: false, error: error.message };
+                );
+                const data = await response.json();
+                console.log('Telegram Response:', data);
+                
+                if (data.ok) {
+                    return { success: true };
+                } else {
+                    return { success: false, error: data.description };
                 }
+            } catch (error) {
+                console.error('Telegram Error:', error);
+                return { success: false, error: error.message };
+            }
+        }
+        
+        // ========== زر التواصل العام ==========
+        document.getElementById('contactSubmitBtn').addEventListener('click', function() {
+            const form = document.getElementById('contactForm');
+            
+            // التحقق من الحقول
+            const name = document.getElementById('c_name').value.trim();
+            const email = document.getElementById('c_email').value.trim();
+            const subject = document.getElementById('c_subject').value.trim();
+            const message = document.getElementById('c_message').value.trim();
+            
+            if (!name || !email || !subject || !message) {
+                alert('⚠️ يرجى ملء جميع الحقول المطلوبة.');
+                return;
             }
             
-            // ========== نموذج التواصل العام (EmailJS) ==========
-            document.getElementById('contactForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const submitBtn = this.querySelector('button[type="submit"]');
-                const originalText = submitBtn.textContent;
-                submitBtn.textContent = 'جاري الإرسال...';
-                submitBtn.disabled = true;
-                
-                const templateParams = {
-                    from_name: document.getElementById('c_name').value,
-                    from_email: document.getElementById('c_email').value,
-                    subject: document.getElementById('c_subject').value,
-                    message: document.getElementById('c_message').value,
-                    type: 'رسالة تواصل عام'
-                };
-                
-                emailjs.send("service_fl4lu2h", "template_iwc9ymh", templateParams)
-                    .then(function() {
-                        alert('✅ تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.');
-                        document.getElementById('contactForm').reset();
-                    })
-                    .catch(function(error) {
-                        alert('❌ حدث خطأ. يرجى التواصل عبر الإيميل مباشرة:\nBasmaboumedfaa@gmail.com');
-                        console.error('EmailJS Error:', error);
-                    })
-                    .finally(function() {
-                        submitBtn.textContent = originalText;
-                        submitBtn.disabled = false;
-                    });
-            });
+            const btn = this;
+            const originalText = btn.textContent;
+            btn.textContent = 'جاري الإرسال...';
+            btn.disabled = true;
             
-            // ========== نموذج طلب الانضمام (مباشر لتليجرام) ==========
-            document.getElementById('joinForm').addEventListener('submit', async function(e) {
-                e.preventDefault();
-                
-                const submitBtn = this.querySelector('button[type="submit"]');
-                const originalText = submitBtn.textContent;
-                submitBtn.textContent = 'جاري إرسال طلبك...';
-                submitBtn.disabled = true;
-                
-                const joinData = {
-                    name: document.getElementById('j_name').value.trim(),
-                    age: document.getElementById('j_age').value.trim(),
-                    wilaya: document.getElementById('j_wilaya').value.trim(),
-                    phone: document.getElementById('j_phone').value.trim(),
-                    email: document.getElementById('j_email').value.trim() || 'غير مذكور',
-                    skills: document.getElementById('j_skills').value.trim() || 'غير مذكور',
-                    motivation: document.getElementById('j_motivation').value.trim() || 'غير مذكور'
-                };
-                
-                const result = await sendJoinRequestToTelegram(joinData);
-                
-                if (result.success) {
-                    alert('✅ تم تقديم طلب انضمامك بنجاح!\n\nوصل طلبك لمجموعة تيليجرام.\nسنتواصل معك قريباً.');
-                    document.getElementById('joinForm').reset();
-                } else {
-                    alert('❌ فشل الإرسال.\n\nيرجى التواصل معنا مباشرة عبر:\n📧 Basmaboumedfaa@gmail.com\n📞 0776024950');
-                    console.error('Error:', result.error);
-                }
-                
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            });
+            const templateParams = {
+                from_name: name,
+                from_email: email,
+                subject: subject,
+                message: message,
+                type: 'رسالة تواصل عام'
+            };
             
-        })();
+            emailjs.send("service_fl4lu2h", "template_iwc9ymh", templateParams)
+                .then(function() {
+                    alert('✅ تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.');
+                    form.reset();
+                })
+                .catch(function(error) {
+                    alert('❌ حدث خطأ. يرجى التواصل عبر الإيميل:\nBasmaboumedfaa@gmail.com');
+                    console.error('EmailJS Error:', error);
+                })
+                .finally(function() {
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                });
+        });
+        
+        // ========== زر طلب الانضمام ==========
+        document.getElementById('joinSubmitBtn').addEventListener('click', async function() {
+            const form = document.getElementById('joinForm');
+            
+            // جمع البيانات
+            const name = document.getElementById('j_name').value.trim();
+            const age = document.getElementById('j_age').value.trim();
+            const wilaya = document.getElementById('j_wilaya').value.trim();
+            const phone = document.getElementById('j_phone').value.trim();
+            
+            if (!name || !age || !wilaya || !phone) {
+                alert('⚠️ يرجى ملء جميع الحقول المطلوبة (الاسم، العمر، الولاية، الهاتف).');
+                return;
+            }
+            
+            const joinData = {
+                name: name,
+                age: age,
+                wilaya: wilaya,
+                phone: phone,
+                email: document.getElementById('j_email').value.trim() || 'غير مذكور',
+                skills: document.getElementById('j_skills').value.trim() || 'غير مذكور',
+                motivation: document.getElementById('j_motivation').value.trim() || 'غير مذكور'
+            };
+            
+            const btn = this;
+            const originalText = btn.textContent;
+            btn.textContent = 'جاري إرسال طلبك...';
+            btn.disabled = true;
+            
+            console.log('Sending to Telegram:', joinData);
+            
+            const result = await sendToTelegram(joinData);
+            
+            if (result.success) {
+                alert('✅ تم تقديم طلب انضمامك بنجاح!\n\nوصل طلبك لمجموعة تيليجرام.\nسنتواصل معك قريباً.');
+                form.reset();
+            } else {
+                alert('❌ فشل الإرسال.\n\nيرجى التواصل معنا مباشرة:\n📧 Basmaboumedfaa@gmail.com\n📞 0776024950');
+                console.error('Error:', result.error);
+            }
+            
+            btn.textContent = originalText;
+            btn.disabled = false;
+        });
     </script>
 </body>
 </html>

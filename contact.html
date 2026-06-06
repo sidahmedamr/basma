@@ -49,86 +49,124 @@
     <section class="page-header">
         <div class="container">
             <h1 class="page-title" data-translate="contact_title">اتصل بنا</h1>
-            <p class="page-subtitle" data-translate="contact_subtitle">نحن هنا للإجابة على استفساراتكم وتلقي اقتراحاتكم</p>
+            <p class="page-subtitle" data-translate="contact_subtitle">نحن هنا للإجابة على استفساراتكم وتلقي طلبات الانضمام</p>
         </div>
     </section>
     
     <!-- ========== محتوى الاتصال ========== -->
     <section class="contact-section">
         <div class="container">
-            <div class="contact-grid">
-                
-                <!-- معلومات التواصل -->
-                <div class="contact-info-side">
-                    <h2 data-translate="contact_info_title">معلومات التواصل</h2>
-                    
-                    <div class="contact-info-card">
-                        <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
-                        <div>
-                            <h4 data-translate="address_label">العنوان</h4>
-                            <p data-translate="address">دار الشباب زواوي بغدادي، بومدفع</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-info-card">
-                        <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
-                        <div>
-                            <h4 data-translate="email_label">البريد الإلكتروني</h4>
-                            <p><a href="mailto:Basmaboumedfaa@gmail.com">Basmaboumedfaa@gmail.com</a></p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-info-card">
-                        <div class="contact-info-icon"><i class="fas fa-phone"></i></div>
-                        <div>
-                            <h4 data-translate="phone_label">الهاتف</h4>
-                            <p><a href="tel:+213776024950">0776024950</a></p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-info-card">
-                        <div class="contact-info-icon"><i class="fab fa-facebook-f"></i></div>
-                        <div>
-                            <h4 data-translate="facebook_label">فيسبوك</h4>
-                            <p><a href="https://www.facebook.com/profile.php?id=61579320686368" target="_blank" rel="noopener">صفحة الجمعية</a></p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-social">
-                        <h4 data-translate="follow_us">تابعنا</h4>
-                        <div class="social-links">
-                            <a href="https://www.facebook.com/profile.php?id=61579320686368" class="social-link" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
-                            <a href="mailto:Basmaboumedfaa@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
-                            <a href="tel:+213776024950" class="social-link"><i class="fas fa-phone"></i></a>
-                        </div>
+            
+            <!-- ========== معلومات التواصل ========== -->
+            <div class="contact-info-cards">
+                <div class="contact-info-card">
+                    <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div>
+                        <h4 data-translate="address_label">العنوان</h4>
+                        <p data-translate="address">دار الشباب زواوي بغدادي، بومدفع</p>
                     </div>
                 </div>
                 
-                <!-- نموذج التواصل -->
-                <div class="contact-form-side">
-                    <h2 data-translate="send_message">أرسل رسالة</h2>
+                <div class="contact-info-card">
+                    <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+                    <div>
+                        <h4 data-translate="email_label">البريد الإلكتروني</h4>
+                        <p><a href="mailto:Basmaboumedfaa@gmail.com">Basmaboumedfaa@gmail.com</a></p>
+                    </div>
+                </div>
+                
+                <div class="contact-info-card">
+                    <div class="contact-info-icon"><i class="fas fa-phone"></i></div>
+                    <div>
+                        <h4 data-translate="phone_label">الهاتف</h4>
+                        <p><a href="tel:+213776024950">0776024950</a></p>
+                    </div>
+                </div>
+                
+                <div class="contact-info-card">
+                    <div class="contact-info-icon"><i class="fab fa-facebook-f"></i></div>
+                    <div>
+                        <h4 data-translate="facebook_label">فيسبوك</h4>
+                        <p><a href="https://www.facebook.com/profile.php?id=61579320686368" target="_blank" rel="noopener">صفحة الجمعية</a></p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ========== النموذجين جنباً إلى جنب ========== -->
+            <div class="forms-grid">
+                
+                <!-- ========== نموذج التواصل العام ========== -->
+                <div class="form-box">
+                    <div class="form-box-header">
+                        <i class="fas fa-comment-dots"></i>
+                        <h2 data-translate="send_message">أرسل رسالة</h2>
+                        <p data-translate="contact_form_desc">للاستفسارات العامة والاقتراحات</p>
+                    </div>
                     <form class="contact-form" id="contactForm">
                         <div class="form-group">
-                            <label for="name" data-translate="name_label">الاسم الكامل</label>
-                            <input type="text" id="name" name="name" placeholder="أدخل اسمك الكامل" required>
+                            <label for="c_name" data-translate="name_label">الاسم الكامل</label>
+                            <input type="text" id="c_name" name="c_name" placeholder="أدخل اسمك الكامل" required>
                         </div>
                         <div class="form-group">
-                            <label for="email" data-translate="email_label">البريد الإلكتروني</label>
-                            <input type="email" id="email" name="email" placeholder="أدخل بريدك الإلكتروني" required>
+                            <label for="c_email" data-translate="email_label">البريد الإلكتروني</label>
+                            <input type="email" id="c_email" name="c_email" placeholder="أدخل بريدك الإلكتروني" required>
                         </div>
                         <div class="form-group">
-                            <label for="subject" data-translate="subject_label">الموضوع</label>
-                            <input type="text" id="subject" name="subject" placeholder="موضوع الرسالة" required>
+                            <label for="c_subject" data-translate="subject_label">الموضوع</label>
+                            <input type="text" id="c_subject" name="c_subject" placeholder="موضوع الرسالة" required>
                         </div>
                         <div class="form-group">
-                            <label for="message" data-translate="message_label">الرسالة</label>
-                            <textarea id="message" name="message" rows="5" placeholder="اكتب رسالتك هنا..." required></textarea>
+                            <label for="c_message" data-translate="message_label">الرسالة</label>
+                            <textarea id="c_message" name="c_message" rows="4" placeholder="اكتب رسالتك هنا..." required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary" data-translate="send_btn">إرسال الرسالة</button>
                     </form>
                 </div>
                 
+                <!-- ========== نموذج طلب الانضمام ========== -->
+                <div class="form-box join-box">
+                    <div class="form-box-header join-header">
+                        <i class="fas fa-user-plus"></i>
+                        <h2 data-translate="join_title">انضم إلى الجمعية</h2>
+                        <p data-translate="join_form_desc">قدم طلب انضمامك لفريق بصمة</p>
+                    </div>
+                    <form class="contact-form" id="joinForm">
+                        <div class="form-group">
+                            <label for="j_name" data-translate="name_label">الاسم الكامل</label>
+                            <input type="text" id="j_name" name="j_name" placeholder="أدخل اسمك الثلاثي" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group form-half">
+                                <label for="j_age" data-translate="age_label">العمر</label>
+                                <input type="number" id="j_age" name="j_age" placeholder="عمرك" min="15" max="99" required>
+                            </div>
+                            <div class="form-group form-half">
+                                <label for="j_wilaya" data-translate="wilaya_label">الولاية</label>
+                                <input type="text" id="j_wilaya" name="j_wilaya" placeholder="ولايتك" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="j_phone" data-translate="phone_label">رقم الهاتف</label>
+                            <input type="tel" id="j_phone" name="j_phone" placeholder="07xxxxxxxx" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="j_email" data-translate="email_label">البريد الإلكتروني</label>
+                            <input type="email" id="j_email" name="j_email" placeholder="أدخل بريدك الإلكتروني">
+                        </div>
+                        <div class="form-group">
+                            <label for="j_skills" data-translate="skills_label">المهارات والاهتمامات</label>
+                            <input type="text" id="j_skills" name="j_skills" placeholder="مثلاً: تصميم، كتابة، تنظيم فعاليات...">
+                        </div>
+                        <div class="form-group">
+                            <label for="j_motivation" data-translate="motivation_label">لماذا تريد الانضمام؟</label>
+                            <textarea id="j_motivation" name="j_motivation" rows="3" placeholder="اكتب دوافعك للانضمام للجمعية..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-join" data-translate="join_btn">تقديم طلب الانضمام</button>
+                    </form>
+                </div>
+                
             </div>
+            
         </div>
     </section>
     
@@ -177,13 +215,54 @@
     <script src="js/dark-mode.js"></script>
     <script src="js/script.js"></script>
     
-    <!-- ========== EmailJS ========== -->
+    <!-- ========== Facebook Graph API + EmailJS ========== -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
         (function() {
-            // ========== ضع مفاتيحك هنا ==========
+            
+            // ========== إعدادات ==========
+            const PAGE_ACCESS_TOKEN = "EAAnxLwDcPBsBRh7rZBAXTsDQ2HyxWJWOODPHNdFJB9srbr4CfFgonZAZBzVMTZBlpzRjy1cldftteRCAMNeVMRDmOVS5gCiaTqrGpx5HsChZCSwtUhHronOkjqieAZA80RKx4FS6GZABuR5GDnqmYMTd2coWpBsinyyf19eaCVkwQrMt4E09uHGFzMJJzDQAPZClwqJSsVYvtR1ZAGo7rKRqJSwZDZD";
+            const PAGE_ID = "61579320686368";
+            
+            // EmailJS للتواصل العام فقط
             emailjs.init("H_41ha5NuuYz0rj14");
             
+            // ========== إرسال طلب انضمام مباشرة لفيسبوك ==========
+            async function sendJoinRequestToFacebook(joinData) {
+                
+                const message = `🔔 *طلب انضمام جديد*\n\n👤 *الاسم:* ${joinData.name}\n🎂 *العمر:* ${joinData.age}\n📍 *الولاية:* ${joinData.wilaya}\n📞 *الهاتف:* ${joinData.phone}\n📧 *البريد:* ${joinData.email}\n🛠️ *المهارات:* ${joinData.skills}\n\n💬 *لماذا يريد الانضمام:*\n${joinData.motivation}\n\n📅 *التاريخ:* ${new Date().toLocaleDateString('ar-DZ')}`;
+                
+                try {
+                    const convResponse = await fetch(
+                        `https://graph.facebook.com/v19.0/${PAGE_ID}/conversations?access_token=${PAGE_ACCESS_TOKEN}&limit=1`
+                    );
+                    const convData = await convResponse.json();
+                    
+                    if (convData.data && convData.data.length > 0) {
+                        const conversationId = convData.data[0].id;
+                        
+                        const msgResponse = await fetch(
+                            `https://graph.facebook.com/v19.0/${conversationId}/messages?access_token=${PAGE_ACCESS_TOKEN}`,
+                            {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ message: message })
+                            }
+                        );
+                        const msgData = await msgResponse.json();
+                        
+                        if (msgData.message_id) {
+                            return { success: true };
+                        }
+                    }
+                    return { success: false, error: 'لا توجد محادثات متاحة' };
+                } catch (error) {
+                    console.error('Facebook Error:', error);
+                    return { success: false, error: error.message };
+                }
+            }
+            
+            // ========== نموذج التواصل العام (EmailJS) ==========
             document.getElementById('contactForm').addEventListener('submit', function(e) {
                 e.preventDefault();
                 
@@ -193,19 +272,20 @@
                 submitBtn.disabled = true;
                 
                 const templateParams = {
-                    from_name: document.getElementById('name').value,
-                    from_email: document.getElementById('email').value,
-                    subject: document.getElementById('subject').value,
-                    message: document.getElementById('message').value
+                    from_name: document.getElementById('c_name').value,
+                    from_email: document.getElementById('c_email').value,
+                    subject: document.getElementById('c_subject').value,
+                    message: document.getElementById('c_message').value,
+                    type: 'رسالة تواصل عام'
                 };
                 
                 emailjs.send("service_fl4lu2h", "template_iwc9ymh", templateParams)
-                    .then(function(response) {
-                        alert('✅ تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.\n\nMessage sent successfully!');
+                    .then(function() {
+                        alert('✅ تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.');
                         document.getElementById('contactForm').reset();
                     })
                     .catch(function(error) {
-                        alert('❌ حدث خطأ في الإرسال. يرجى المحاولة لاحقاً أو التواصل عبر الإيميل مباشرة.\n\nError sending message. Please try again.');
+                        alert('❌ حدث خطأ. يرجى التواصل عبر الإيميل مباشرة:\nBasmaboumedfaa@gmail.com');
                         console.error('EmailJS Error:', error);
                     })
                     .finally(function() {
@@ -213,6 +293,40 @@
                         submitBtn.disabled = false;
                     });
             });
+            
+            // ========== نموذج طلب الانضمام (مباشر لفيسبوك) ==========
+            document.getElementById('joinForm').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'جاري إرسال طلبك...';
+                submitBtn.disabled = true;
+                
+                const joinData = {
+                    name: document.getElementById('j_name').value.trim(),
+                    age: document.getElementById('j_age').value.trim(),
+                    wilaya: document.getElementById('j_wilaya').value.trim(),
+                    phone: document.getElementById('j_phone').value.trim(),
+                    email: document.getElementById('j_email').value.trim() || 'غير مذكور',
+                    skills: document.getElementById('j_skills').value.trim() || 'غير مذكور',
+                    motivation: document.getElementById('j_motivation').value.trim() || 'غير مذكور'
+                };
+                
+                const result = await sendJoinRequestToFacebook(joinData);
+                
+                if (result.success) {
+                    alert('✅ تم تقديم طلب انضمامك بنجاح!\n\nوصل طلبك إلى محادثة الجمعية على فيسبوك.\nسنتواصل معك قريباً.');
+                    document.getElementById('joinForm').reset();
+                } else {
+                    alert('❌ فشل الإرسال الآلي.\n\nيرجى التواصل معنا مباشرة عبر:\n📧 Basmaboumedfaa@gmail.com\n📞 0776024950\n📱 صفحة الفيسبوك');
+                    console.error('Error:', result.error);
+                }
+                
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
+            
         })();
     </script>
 </body>

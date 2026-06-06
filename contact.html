@@ -132,21 +132,110 @@
                     </div>
                     <form class="contact-form" id="joinForm" onsubmit="return false;">
                         <div class="form-group">
-                            <label for="j_name" data-translate="name_label">الاسم الكامل</label>
+                            <label for="j_name" data-translate="name_label">الاسم الكامل <span style="color:red">*</span></label>
                             <input type="text" id="j_name" name="j_name" placeholder="أدخل اسمك الثلاثي" required>
                         </div>
                         <div class="form-row">
                             <div class="form-group form-half">
-                                <label for="j_age" data-translate="age_label">العمر</label>
-                                <input type="number" id="j_age" name="j_age" placeholder="عمرك" min="15" max="99" required>
+                                <label for="j_age" data-translate="age_label">العمر <span style="color:red">*</span></label>
+                                <select id="j_age" name="j_age" required>
+                                    <option value="" disabled selected>اختر عمرك</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                </select>
                             </div>
                             <div class="form-group form-half">
-                                <label for="j_wilaya" data-translate="wilaya_label">الولاية</label>
-                                <input type="text" id="j_wilaya" name="j_wilaya" placeholder="ولايتك" required>
+                                <label for="j_wilaya" data-translate="wilaya_label">الولاية <span style="color:red">*</span></label>
+                                <select id="j_wilaya" name="j_wilaya" required>
+                                    <option value="" disabled selected>اختر ولايتك</option>
+                                    <option value="01 - أدرار">01 - أدرار</option>
+                                    <option value="02 - الشلف">02 - الشلف</option>
+                                    <option value="03 - الأغواط">03 - الأغواط</option>
+                                    <option value="04 - أم البواقي">04 - أم البواقي</option>
+                                    <option value="05 - باتنة">05 - باتنة</option>
+                                    <option value="06 - بجاية">06 - بجاية</option>
+                                    <option value="07 - بسكرة">07 - بسكرة</option>
+                                    <option value="08 - بشار">08 - بشار</option>
+                                    <option value="09 - البليدة">09 - البليدة</option>
+                                    <option value="10 - البويرة">10 - البويرة</option>
+                                    <option value="11 - تمنراست">11 - تمنراست</option>
+                                    <option value="12 - تبسة">12 - تبسة</option>
+                                    <option value="13 - تلمسان">13 - تلمسان</option>
+                                    <option value="14 - تيارت">14 - تيارت</option>
+                                    <option value="15 - تيزي وزو">15 - تيزي وزو</option>
+                                    <option value="16 - الجزائر">16 - الجزائر</option>
+                                    <option value="17 - الجلفة">17 - الجلفة</option>
+                                    <option value="18 - جيجل">18 - جيجل</option>
+                                    <option value="19 - سطيف">19 - سطيف</option>
+                                    <option value="20 - سعيدة">20 - سعيدة</option>
+                                    <option value="21 - سكيكدة">21 - سكيكدة</option>
+                                    <option value="22 - سيدي بلعباس">22 - سيدي بلعباس</option>
+                                    <option value="23 - عنابة">23 - عنابة</option>
+                                    <option value="24 - قالمة">24 - قالمة</option>
+                                    <option value="25 - قسنطينة">25 - قسنطينة</option>
+                                    <option value="26 - المدية">26 - المدية</option>
+                                    <option value="27 - مستغانم">27 - مستغانم</option>
+                                    <option value="28 - المسيلة">28 - المسيلة</option>
+                                    <option value="29 - معسكر">29 - معسكر</option>
+                                    <option value="30 - ورقلة">30 - ورقلة</option>
+                                    <option value="31 - وهران">31 - وهران</option>
+                                    <option value="32 - البيض">32 - البيض</option>
+                                    <option value="33 - إليزي">33 - إليزي</option>
+                                    <option value="34 - برج بوعريريج">34 - برج بوعريريج</option>
+                                    <option value="35 - بومرداس">35 - بومرداس</option>
+                                    <option value="36 - الطارف">36 - الطارف</option>
+                                    <option value="37 - تندوف">37 - تندوف</option>
+                                    <option value="38 - تيسمسيلت">38 - تيسمسيلت</option>
+                                    <option value="39 - الوادي">39 - الوادي</option>
+                                    <option value="40 - خنشلة">40 - خنشلة</option>
+                                    <option value="41 - سوق أهراس">41 - سوق أهراس</option>
+                                    <option value="42 - تيبازة">42 - تيبازة</option>
+                                    <option value="43 - ميلة">43 - ميلة</option>
+                                    <option value="44 - عين الدفلى">44 - عين الدفلى</option>
+                                    <option value="45 - النعامة">45 - النعامة</option>
+                                    <option value="46 - عين تيموشنت">46 - عين تيموشنت</option>
+                                    <option value="47 - غرداية">47 - غرداية</option>
+                                    <option value="48 - رليزان">48 - رليزان</option>
+                                    <option value="49 - تيميمون">49 - تيميمون</option>
+                                    <option value="50 - برج باجي مختار">50 - برج باجي مختار</option>
+                                    <option value="51 - أولاد جلال">51 - أولاد جلال</option>
+                                    <option value="52 - بني عباس">52 - بني عباس</option>
+                                    <option value="53 - عين صالح">53 - عين صالح</option>
+                                    <option value="54 - عين قزام">54 - عين قزام</option>
+                                    <option value="55 - تقرت">55 - تقرت</option>
+                                    <option value="56 - جانت">56 - جانت</option>
+                                    <option value="57 - المغير">57 - المغير</option>
+                                    <option value="58 - المنيعة">58 - المنيعة</option>
+                                    <option value="59 - الدبيلة">59 - الدبيلة</option>
+                                    <option value="60 - بلدية الشريعة">60 - الشريعة</option>
+                                    <option value="61 - سيدي بلعباس الجديدة">61 - عين بسام</option>
+                                    <option value="62 - سطيف الجديدة">62 - البيضاء</option>
+                                    <option value="63 - تلاغ">63 - تلاغ</option>
+                                    <option value="64 - بوغزول">64 - بوغزول</option>
+                                    <option value="65 - الأبيض سيدي الشيخ">65 - الأبيض سيدي الشيخ</option>
+                                    <option value="66 - أولاد صيد">66 - أولاد صيد</option>
+                                    <option value="67 - قصابي">67 - قصابي</option>
+                                    <option value="68 - توات">68 - توات</option>
+                                    <option value="69 - تيميمون الجديدة">69 - تيميمون الجديدة</option>
+                                </select>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="j_phone" data-translate="phone_label">رقم الهاتف</label>
+                            <label for="j_phone" data-translate="phone_label">رقم الهاتف <span style="color:red">*</span></label>
                             <input type="tel" id="j_phone" name="j_phone" placeholder="07xxxxxxxx" required>
                         </div>
                         <div class="form-group">
@@ -158,8 +247,8 @@
                             <input type="text" id="j_skills" name="j_skills" placeholder="مثلاً: تصميم، كتابة، تنظيم فعاليات...">
                         </div>
                         <div class="form-group">
-                            <label for="j_motivation" data-translate="motivation_label">لماذا تريد الانضمام؟</label>
-                            <textarea id="j_motivation" name="j_motivation" rows="3" placeholder="اكتب دوافعك للانضمام للجمعية..."></textarea>
+                            <label for="j_motivation" data-translate="motivation_label">لماذا تريد الانضمام؟ <span style="color:red">*</span></label>
+                            <textarea id="j_motivation" name="j_motivation" rows="3" placeholder="اكتب دوافعك للانضمام للجمعية..." required></textarea>
                         </div>
                         <button type="button" class="btn btn-join" id="joinSubmitBtn" data-translate="join_btn">تقديم طلب الانضمام</button>
                     </form>
@@ -215,7 +304,30 @@
     <script src="js/dark-mode.js"></script>
     <script src="js/script.js"></script>
     
-    <!-- ========== EmailJS + Telegram Bot ========== -->
+    <style>
+        select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--border-color, #e2e8f0);
+            border-radius: 8px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 0.95rem;
+            color: var(--text-color, #333);
+            background-color: var(--input-bg, #fff);
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: left 1rem center;
+            transition: border-color 0.3s;
+        }
+        select:focus {
+            outline: none;
+            border-color: var(--primary-color, #2ecc71);
+        }
+        select option[value=""] { color: #aaa; }
+    </style>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
         // ========== إعدادات ==========
@@ -227,9 +339,50 @@
             emailjs.init("H_41ha5NuuYz0rj14");
         })();
         
-        // ========== إرسال لتليجرام ==========
+        // ========== إرسال رسالة تواصل عام لتليجرام ==========
+        async function sendContactToTelegram(contactData) {
+            const message = `✉️ *رسالة تواصل جديدة*
+━━━━━━━━━━━━━━━━━
+
+👤 *المرسل:*
+⤷ ${contactData.name}
+
+📧 *البريد الإلكتروني:*
+⤷ ${contactData.email}
+
+📌 *الموضوع:*
+⤷ ${contactData.subject}
+
+💬 *الرسالة:*
+⤷ ${contactData.message}
+
+━━━━━━━━━━━━━━━━━
+📅 *تاريخ الرسالة:* ${new Date().toLocaleDateString('ar-DZ', { 
+                weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' 
+            })}`;
+
+            try {
+                const response = await fetch(
+                    "https://api.telegram.org/bot" + TELEGRAM_BOT_TOKEN + "/sendMessage",
+                    {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            chat_id: TELEGRAM_CHAT_ID,
+                            text: message,
+                            parse_mode: 'Markdown'
+                        })
+                    }
+                );
+                const data = await response.json();
+                return data.ok ? { success: true } : { success: false, error: data.description };
+            } catch (error) {
+                return { success: false, error: error.message };
+            }
+        }
+
+        // ========== إرسال طلب انضمام لتليجرام ==========
         async function sendToTelegram(joinData) {
-            
             const message = `🔔 *طلب انضمام جديد*
 ━━━━━━━━━━━━━━━━━
 
@@ -237,7 +390,7 @@
 ⤷ ${joinData.name}
 
 📋 *المعلومات الشخصية:*
-⤷ 🎂 العمر: ${joinData.age}
+⤷ 🎂 العمر: ${joinData.age} سنة
 ⤷ 📍 الولاية: ${joinData.wilaya}
 ⤷ 📞 الهاتف: ${joinData.phone}
 ⤷ 📧 البريد: ${joinData.email}
@@ -250,12 +403,9 @@
 
 ━━━━━━━━━━━━━━━━━
 📅 *تاريخ الطلب:* ${new Date().toLocaleDateString('ar-DZ', { 
-                    weekday: 'long', 
-                    year: 'numeric', 
-                    month: 'long', 
-                    day: 'numeric' 
-                })}`;
-            
+                weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' 
+            })}`;
+
             try {
                 const response = await fetch(
                     "https://api.telegram.org/bot" + TELEGRAM_BOT_TOKEN + "/sendMessage",
@@ -271,12 +421,7 @@
                 );
                 const data = await response.json();
                 console.log('Telegram Response:', data);
-                
-                if (data.ok) {
-                    return { success: true };
-                } else {
-                    return { success: false, error: data.description };
-                }
+                return data.ok ? { success: true } : { success: false, error: data.description };
             } catch (error) {
                 console.error('Telegram Error:', error);
                 return { success: false, error: error.message };
@@ -284,7 +429,7 @@
         }
         
         // ========== زر التواصل العام ==========
-        document.getElementById('contactSubmitBtn').addEventListener('click', function() {
+        document.getElementById('contactSubmitBtn').addEventListener('click', async function() {
             const form = document.getElementById('contactForm');
             
             const name = document.getElementById('c_name').value.trim();
@@ -309,20 +454,32 @@
                 message: message,
                 type: 'رسالة تواصل عام'
             };
+
+            const contactData = { name, email, subject, message };
             
-            emailjs.send("service_fl4lu2h", "template_iwc9ymh", templateParams)
-                .then(function() {
+            try {
+                // إرسال عبر EmailJS وتليجرام معاً
+                const [emailResult, telegramResult] = await Promise.allSettled([
+                    emailjs.send("service_fl4lu2h", "template_iwc9ymh", templateParams),
+                    sendContactToTelegram(contactData)
+                ]);
+
+                const emailOk = emailResult.status === 'fulfilled';
+                const telegramOk = telegramResult.status === 'fulfilled' && telegramResult.value.success;
+
+                if (emailOk || telegramOk) {
                     alert('✅ تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.');
                     form.reset();
-                })
-                .catch(function(error) {
-                    alert('❌ حدث خطأ. يرجى التواصل عبر الإيميل:\nBasmaboumedfaa@gmail.com');
-                    console.error('EmailJS Error:', error);
-                })
-                .finally(function() {
-                    btn.textContent = originalText;
-                    btn.disabled = false;
-                });
+                } else {
+                    alert('❌ حدث خطأ في الإرسال. يرجى التواصل عبر الإيميل:\nBasmaboumedfaa@gmail.com');
+                }
+            } catch (error) {
+                alert('❌ حدث خطأ. يرجى التواصل عبر الإيميل:\nBasmaboumedfaa@gmail.com');
+                console.error('Error:', error);
+            } finally {
+                btn.textContent = originalText;
+                btn.disabled = false;
+            }
         });
         
         // ========== زر طلب الانضمام ==========
@@ -333,9 +490,26 @@
             const age = document.getElementById('j_age').value.trim();
             const wilaya = document.getElementById('j_wilaya').value.trim();
             const phone = document.getElementById('j_phone').value.trim();
+            const motivation = document.getElementById('j_motivation').value.trim();
             
-            if (!name || !age || !wilaya || !phone) {
-                alert('⚠️ يرجى ملء جميع الحقول المطلوبة (الاسم، العمر، الولاية، الهاتف).');
+            if (!name) {
+                alert('⚠️ يرجى إدخال الاسم الكامل.');
+                return;
+            }
+            if (!age) {
+                alert('⚠️ يرجى اختيار العمر.');
+                return;
+            }
+            if (!wilaya) {
+                alert('⚠️ يرجى اختيار الولاية.');
+                return;
+            }
+            if (!phone) {
+                alert('⚠️ يرجى إدخال رقم الهاتف.');
+                return;
+            }
+            if (!motivation) {
+                alert('⚠️ يرجى كتابة دوافعك للانضمام.');
                 return;
             }
             
@@ -346,7 +520,7 @@
                 phone: phone,
                 email: document.getElementById('j_email').value.trim() || 'غير مذكور',
                 skills: document.getElementById('j_skills').value.trim() || 'غير مذكور',
-                motivation: document.getElementById('j_motivation').value.trim() || 'غير مذكور'
+                motivation: motivation
             };
             
             const btn = this;

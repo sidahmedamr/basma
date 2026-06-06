@@ -230,27 +230,31 @@
         // ========== إرسال لتليجرام ==========
         async function sendToTelegram(joinData) {
             
-            const message = 
-                "🔔 *طلب انضمام جديد*\\n" +
-                "━━━━━━━━━━━━━━━━━\\n\\n" +
-                "👤 *الاسم الكامل:*\\n" +
-                "⤷ " + joinData.name + "\\n\\n" +
-                "📋 *المعلومات الشخصية:*\\n" +
-                "⤷ 🎂 العمر: " + joinData.age + "\\n" +
-                "⤷ 📍 الولاية: " + joinData.wilaya + "\\n" +
-                "⤷ 📞 الهاتف: " + joinData.phone + "\\n" +
-                "⤷ 📧 البريد: " + joinData.email + "\\n\\n" +
-                "🛠️ *المهارات والاهتمامات:*\\n" +
-                "⤷ " + joinData.skills + "\\n\\n" +
-                "💬 *دوافع الانضمام:*\\n" +
-                "⤷ " + joinData.motivation + "\\n\\n" +
-                "━━━━━━━━━━━━━━━━━\\n" +
-                "📅 *تاريخ الطلب:* " + new Date().toLocaleDateString('ar-DZ', { 
+            const message = `🔔 *طلب انضمام جديد*
+━━━━━━━━━━━━━━━━━
+
+👤 *الاسم الكامل:*
+⤷ ${joinData.name}
+
+📋 *المعلومات الشخصية:*
+⤷ 🎂 العمر: ${joinData.age}
+⤷ 📍 الولاية: ${joinData.wilaya}
+⤷ 📞 الهاتف: ${joinData.phone}
+⤷ 📧 البريد: ${joinData.email}
+
+🛠️ *المهارات والاهتمامات:*
+⤷ ${joinData.skills}
+
+💬 *دوافع الانضمام:*
+⤷ ${joinData.motivation}
+
+━━━━━━━━━━━━━━━━━
+📅 *تاريخ الطلب:* ${new Date().toLocaleDateString('ar-DZ', { 
                     weekday: 'long', 
                     year: 'numeric', 
                     month: 'long', 
                     day: 'numeric' 
-                });
+                })}`;
             
             try {
                 const response = await fetch(

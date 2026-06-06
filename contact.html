@@ -229,15 +229,28 @@
         
         // ========== إرسال لتليجرام ==========
         async function sendToTelegram(joinData) {
-            const message = "🔔 *طلب انضمام جديد*\\n\\n" +
-                "👤 *الاسم:* " + joinData.name + "\\n" +
-                "🎂 *العمر:* " + joinData.age + "\\n" +
-                "📍 *الولاية:* " + joinData.wilaya + "\\n" +
-                "📞 *الهاتف:* " + joinData.phone + "\\n" +
-                "📧 *البريد:* " + joinData.email + "\\n" +
-                "🛠️ *المهارات:* " + joinData.skills + "\\n\\n" +
-                "💬 *لماذا يريد الانضمام:*\\n" + joinData.motivation + "\\n\\n" +
-                "📅 *التاريخ:* " + new Date().toLocaleDateString('ar-DZ');
+            
+            const message = 
+                "🔔 *طلب انضمام جديد*\\n" +
+                "━━━━━━━━━━━━━━━━━\\n\\n" +
+                "👤 *الاسم الكامل:*\\n" +
+                "⤷ " + joinData.name + "\\n\\n" +
+                "📋 *المعلومات الشخصية:*\\n" +
+                "⤷ 🎂 العمر: " + joinData.age + "\\n" +
+                "⤷ 📍 الولاية: " + joinData.wilaya + "\\n" +
+                "⤷ 📞 الهاتف: " + joinData.phone + "\\n" +
+                "⤷ 📧 البريد: " + joinData.email + "\\n\\n" +
+                "🛠️ *المهارات والاهتمامات:*\\n" +
+                "⤷ " + joinData.skills + "\\n\\n" +
+                "💬 *دوافع الانضمام:*\\n" +
+                "⤷ " + joinData.motivation + "\\n\\n" +
+                "━━━━━━━━━━━━━━━━━\\n" +
+                "📅 *تاريخ الطلب:* " + new Date().toLocaleDateString('ar-DZ', { 
+                    weekday: 'long', 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                });
             
             try {
                 const response = await fetch(
@@ -270,7 +283,6 @@
         document.getElementById('contactSubmitBtn').addEventListener('click', function() {
             const form = document.getElementById('contactForm');
             
-            // التحقق من الحقول
             const name = document.getElementById('c_name').value.trim();
             const email = document.getElementById('c_email').value.trim();
             const subject = document.getElementById('c_subject').value.trim();
@@ -313,7 +325,6 @@
         document.getElementById('joinSubmitBtn').addEventListener('click', async function() {
             const form = document.getElementById('joinForm');
             
-            // جمع البيانات
             const name = document.getElementById('j_name').value.trim();
             const age = document.getElementById('j_age').value.trim();
             const wilaya = document.getElementById('j_wilaya').value.trim();

@@ -8,7 +8,7 @@ const translations = {
         announcements: 'الإعلانات',
         goals: 'أهدافنا',
         projects: 'أعمالنا',
-        contact: 'اتصل بنا',
+        contact: 'اتصل بنا وإنضم',
         
         // الواجهة
         association_full_name: 'الجمعية الثقافية الشبابية بصمة',
@@ -86,8 +86,8 @@ const translations = {
         project6_title: 'دروس الدعم المدرسي',
         project6_text: 'دروس مجانية لتلاميذ المنطقة في مختلف المواد',
         
-        // اتصل بنا
-        contact_title: 'اتصل بنا',
+        // اتصل بنا وإنضم
+        contact_title: 'اتصل بنا وإنضم',
         contact_subtitle: 'نحن هنا للإجابة على استفساراتكم وتلقي اقتراحاتكم',
         contact_info_title: 'معلومات التواصل',
         address_label: 'العنوان',
@@ -113,10 +113,10 @@ const translations = {
         // التذييل
         footer_desc: 'الجمعية الثقافية الشبابية بصمة - بلدية بومدفع - دار الشباب زواوي بغدادي',
         quick_links: 'روابط سريعة',
-        contact_us: 'اتصل بنا',
+        contact_us: 'اتصل بنا وإنضم',
         address: 'دار الشباب زواوي بغدادي، بومدفع',
         follow_us: 'تابعنا',
-        rights: 'جميع الحقوق محفوظة',
+        rights: 'من تصميم عمراوي سيداحمد',
         
         dir: 'rtl'
     },
@@ -128,7 +128,7 @@ const translations = {
         announcements: 'Announcements',
         goals: 'Our Goals',
         projects: 'Our Work',
-        contact: 'Contact Us',
+        contact: 'Contact Us And Join',
         
         // Hero
         association_full_name: 'Basma Cultural Youth Association',
@@ -207,7 +207,7 @@ const translations = {
         project6_text: 'Free lessons for students in the region in various subjects',
         
         // Contact
-        contact_title: 'Contact Us',
+        contact_title: 'Contact Us And Join',
         contact_subtitle: 'We are here to answer your inquiries and receive your suggestions',
         contact_info_title: 'Contact Information',
         address_label: 'Address',
@@ -233,10 +233,10 @@ const translations = {
         // Footer
         footer_desc: 'Basma Cultural Youth Association - Boumedfaa - Dar Chebab Zouaoui Baghdad',
         quick_links: 'Quick Links',
-        contact_us: 'Contact Us',
+        contact_us: 'Contact Us And Join',
         address: 'Dar Chebab Zouaoui Baghdad, Boumedfaa',
         follow_us: 'Follow Us',
-        rights: 'All Rights Reserved',
+        rights: 'Desigend By Amraoui Sidahmed',
         
         dir: 'ltr'
     }

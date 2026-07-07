@@ -1171,6 +1171,72 @@ html[dir="ltr"] .goal-item:hover {
     box-shadow: 0 10px 25px rgba(76, 175, 80, 0.4);
 }
 
+/* ========== زر تحميل القانون الأساسي ========== */
+.law-download-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.law-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #D32F2F, #B71C1C);
+    color: var(--white);
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: var(--transition);
+    box-shadow: 0 5px 20px rgba(211, 47, 47, 0.3);
+}
+
+.law-download-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(211, 47, 47, 0.4);
+    color: var(--white);
+}
+
+.law-download-btn .fa-file-pdf {
+    font-size: 1.5rem;
+}
+
+.law-download-btn .fa-download {
+    font-size: 1rem;
+    animation: bounceDown 1.5s infinite;
+}
+
+@keyframes bounceDown {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(4px); }
+}
+
+/* ========== أيقونات التواصل الاجتماعي داخل البطاقة ========== */
+.social-links-inline {
+    display: flex;
+    gap: 12px;
+    margin-top: 5px;
+}
+
+.social-links-inline a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--primary-bg);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.social-links-inline a:hover {
+    background: var(--primary);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
 /* ========== التذييل ========== */
 .footer {
     background: var(--footer-bg);

@@ -264,6 +264,24 @@
         
         (function() { emailjs.init("H_41ha5NuuYz0rj14"); })();
         
+        // ========== فقاعة التنبيه ==========
+        function showToast(message, type) {
+            const existing = document.querySelector('.toast-notification');
+            if (existing) existing.remove();
+            
+            const toast = document.createElement('div');
+            toast.className = 'toast-notification toast-' + type;
+            toast.innerHTML = message;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => toast.classList.add('show'), 10);
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 400);
+            }, 5000);
+        }
+        
         // ========== ملء الأعمار (15 - 99) ==========
         const ageSelect = document.getElementById('j_age');
         for (let i = 15; i <= 99; i++) {
@@ -284,7 +302,7 @@
             });
         }
         
-        // ========== تحديث البلديات عند تغيير الولاية ==========
+        // ========== تحديث البلديات ==========
         const baladiyaSelect = document.getElementById('j_baladiya');
         wilayaSelect.addEventListener('change', function() {
             const wilayaCode = this.value;
@@ -301,7 +319,7 @@
             }
         });
         
-        // ========== إرسال لتليجرام (HTML mode) ==========
+        // ========== إرسال لتليجرام ==========
         async function sendToTelegram(joinData) {
             
             let wilayaName = joinData.wilaya;
@@ -373,7 +391,7 @@
             const message = document.getElementById('c_message').value.trim();
             
             if (!name || !email || !subject || !message) {
-                alert('⚠️ يرجى ملء جميع الحقول المطلوبة.');
+                showToast('⚠️ يرجى ملء جميع الحقول المطلوبة.', 'warning');
                 return;
             }
             
@@ -389,9 +407,18 @@
                 message: message,
                 type: 'رسالة تواصل عام'
             })
-            .then(() => { alert('✅ تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.'); form.reset(); })
-            .catch(err => { alert('❌ حدث خطأ. يرجى التواصل عبر الإيميل:\nBasmaboumedfaa@gmail.com'); console.error(err); })
-            .finally(() => { btn.textContent = originalText; btn.disabled = false; });
+            .then(() => {
+                showToast('✅ تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.', 'success');
+                form.reset();
+            })
+            .catch(err => {
+                console.error(err);
+                showToast('❌ فشل الإرسال. تواصل معنا عبر:<br>📧 Basmaboumedfaa@gmail.com<br>📞 0776024950', 'error');
+            })
+            .finally(() => {
+                btn.textContent = originalText;
+                btn.disabled = false;
+            });
         });
         
         // ========== زر طلب الانضمام ==========
@@ -404,7 +431,7 @@
             const phone = document.getElementById('j_phone').value.trim();
             
             if (!name || !age || !wilaya || !baladiya || !phone) {
-                alert('⚠️ يرجى ملء جميع الحقول المطلوبة (الاسم، العمر، الولاية، البلدية، الهاتف).');
+                showToast('⚠️ يرجى ملء جميع الحقول المطلوبة (الاسم، العمر، الولاية، البلدية، الهاتف).', 'warning');
                 return;
             }
             
@@ -422,8 +449,13 @@
             
             const result = await sendToTelegram(joinData);
             
-            alert(result.success ? '✅ تم تقديم طلب انضمامك بنجاح!\n\nوصل طلبك لمجموعة تيليجرام.' : '❌ فشل الإرسال.\n\nيرجى التواصل عبر:\n📧 Basmaboumedfaa@gmail.com\n📞 0776024950');
-            if (result.success) form.reset();
+            if (result.success) {
+                showToast('✅ تم تقديم طلب انضمامك بنجاح!<br>وصل طلبك لمجموعة تيليجرام.', 'success');
+                form.reset();
+            } else {
+                showToast('❌ فشل الإرسال الآلي.<br>تواصل معنا عبر:<br>📧 Basmaboumedfaa@gmail.com<br>📞 0776024950<br>أو عبر صفحات التواصل الاجتماعي.', 'error');
+            }
+            
             btn.textContent = originalText;
             btn.disabled = false;
         });

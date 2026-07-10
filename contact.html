@@ -142,17 +142,27 @@
                     <form class="contact-form" id="joinForm" onsubmit="return false;">
                         <div class="form-group">
                             <label for="j_name" data-translate="name_label">الاسم الكامل</label>
-                            <input type="text" id="j_name" name="j_name" placeholder="أدخل اسمك الثلاثي" required>
+                            <input type="text" id="j_name" name="j_name" placeholder="أدخل اسمك الكامل" required>
                         </div>
                         <div class="form-row">
                             <div class="form-group form-half">
                                 <label for="j_age" data-translate="age_label">العمر</label>
-                                <input type="number" id="j_age" name="j_age" placeholder="عمرك" min="15" max="99" required>
+                                <select id="j_age" name="j_age" required>
+                                    <option value="">اختر عمرك</option>
+                                </select>
                             </div>
                             <div class="form-group form-half">
                                 <label for="j_wilaya" data-translate="wilaya_label">الولاية</label>
-                                <input type="text" id="j_wilaya" name="j_wilaya" placeholder="ولايتك" required>
+                                <select id="j_wilaya" name="j_wilaya" required>
+                                    <option value="">اختر ولايتك</option>
+                                </select>
                             </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="j_baladiya" data-translate="baladiya_label">البلدية</label>
+                            <select id="j_baladiya" name="j_baladiya" required disabled>
+                                <option value="">اختر البلدية</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="j_phone" data-translate="phone_label">رقم الهاتف</label>
@@ -176,6 +186,24 @@
                 
             </div>
             
+        </div>
+    </section>
+    
+    <!-- ========== خريطة قوقل ========== -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="map-title" data-translate="map_title">موقعنا على الخريطة</h2>
+        </div>
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3233.5!2d2.25!3d36.35!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMjEnMzkuNCJOIDLCsDE1JzAwLjAiRQ!5e0!3m2!1sar!2sdz!4v1690000000000"
+                width="100%" 
+                height="400" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
         </div>
     </section>
     
@@ -221,6 +249,8 @@
     
     <button class="scroll-top-btn" id="scrollTopBtn"><i class="fas fa-chevron-up"></i></button>
     
+    <!-- ========== بيانات الولايات والبلديات الجزائرية ========== -->
+    <script src="js/algeria-data.js"></script>
     <script src="js/translations.js"></script>
     <script src="js/dark-mode.js"></script>
     <script src="js/script.js"></script>
@@ -232,59 +262,71 @@
         const TELEGRAM_BOT_TOKEN = "8915229132:AAGWlzmu41aFfJBYqOSCSSvSGy5Dxo0OiTg";
         const TELEGRAM_CHAT_ID = "-1003813357532";
         
-        // EmailJS
-        (function() {
-            emailjs.init("H_41ha5NuuYz0rj14");
-        })();
+        (function() { emailjs.init("H_41ha5NuuYz0rj14"); })();
+        
+        // ========== ملء الأعمار (15 - 99) ==========
+        const ageSelect = document.getElementById('j_age');
+        for (let i = 15; i <= 99; i++) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.textContent = i + ' سنة';
+            ageSelect.appendChild(option);
+        }
+        
+        // ========== ملء الولايات ==========
+        const wilayaSelect = document.getElementById('j_wilaya');
+        if (typeof algeriaWilayas !== 'undefined') {
+            algeriaWilayas.forEach(wilaya => {
+                const option = document.createElement('option');
+                option.value = wilaya.code;
+                option.textContent = wilaya.code + ' - ' + wilaya.name;
+                wilayaSelect.appendChild(option);
+            });
+        }
+        
+        // ========== تحديث البلديات عند تغيير الولاية ==========
+        const baladiyaSelect = document.getElementById('j_baladiya');
+        wilayaSelect.addEventListener('change', function() {
+            const wilayaCode = this.value;
+            baladiyaSelect.innerHTML = '<option value="">اختر البلدية</option>';
+            baladiyaSelect.disabled = !wilayaCode;
+            
+            if (wilayaCode && typeof algeriaBaladiyat !== 'undefined' && algeriaBaladiyat[wilayaCode]) {
+                algeriaBaladiyat[wilayaCode].forEach(baladiya => {
+                    const option = document.createElement('option');
+                    option.value = baladiya;
+                    option.textContent = baladiya;
+                    baladiyaSelect.appendChild(option);
+                });
+            }
+        });
         
         // ========== إرسال لتليجرام ==========
         async function sendToTelegram(joinData) {
-            
             const message = 
                 "🔔 *طلب انضمام جديد*\\n" +
                 "━━━━━━━━━━━━━━━━━\\n\\n" +
-                "👤 *الاسم الكامل:*\\n" +
-                "⤷ " + joinData.name + "\\n\\n" +
+                "👤 *الاسم الكامل:*\\n⤷ " + joinData.name + "\\n\\n" +
                 "📋 *المعلومات الشخصية:*\\n" +
                 "⤷ 🎂 العمر: " + joinData.age + "\\n" +
                 "⤷ 📍 الولاية: " + joinData.wilaya + "\\n" +
+                "⤷ 🏙️ البلدية: " + joinData.baladiya + "\\n" +
                 "⤷ 📞 الهاتف: " + joinData.phone + "\\n" +
                 "⤷ 📧 البريد: " + joinData.email + "\\n\\n" +
-                "🛠️ *المهارات والاهتمامات:*\\n" +
-                "⤷ " + joinData.skills + "\\n\\n" +
-                "💬 *دوافع الانضمام:*\\n" +
-                "⤷ " + joinData.motivation + "\\n\\n" +
+                "🛠️ *المهارات:*\\n⤷ " + joinData.skills + "\\n\\n" +
+                "💬 *دوافع الانضمام:*\\n⤷ " + joinData.motivation + "\\n\\n" +
                 "━━━━━━━━━━━━━━━━━\\n" +
-                "📅 *تاريخ الطلب:* " + new Date().toLocaleDateString('ar-DZ', { 
-                    weekday: 'long', 
-                    year: 'numeric', 
-                    month: 'long', 
-                    day: 'numeric' 
-                });
+                "📅 *تاريخ الطلب:* " + new Date().toLocaleDateString('ar-DZ', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
             
             try {
-                const response = await fetch(
-                    "https://api.telegram.org/bot" + TELEGRAM_BOT_TOKEN + "/sendMessage",
-                    {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            chat_id: TELEGRAM_CHAT_ID,
-                            text: message,
-                            parse_mode: 'Markdown'
-                        })
-                    }
-                );
+                const response = await fetch("https://api.telegram.org/bot" + TELEGRAM_BOT_TOKEN + "/sendMessage", {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: message, parse_mode: 'Markdown' })
+                });
                 const data = await response.json();
-                console.log('Telegram Response:', data);
-                
-                if (data.ok) {
-                    return { success: true };
-                } else {
-                    return { success: false, error: data.description };
-                }
+                return data.ok ? { success: true } : { success: false, error: data.description };
             } catch (error) {
-                console.error('Telegram Error:', error);
                 return { success: false, error: error.message };
             }
         }
@@ -292,7 +334,6 @@
         // ========== زر التواصل العام ==========
         document.getElementById('contactSubmitBtn').addEventListener('click', function() {
             const form = document.getElementById('contactForm');
-            
             const name = document.getElementById('c_name').value.trim();
             const email = document.getElementById('c_email').value.trim();
             const subject = document.getElementById('c_subject').value.trim();
@@ -308,48 +349,34 @@
             btn.textContent = 'جاري الإرسال...';
             btn.disabled = true;
             
-            const templateParams = {
+            emailjs.send("service_fl4lu2h", "template_iwc9ymh", {
                 from_name: name,
                 from_email: email,
                 subject: subject,
                 message: message,
                 type: 'رسالة تواصل عام'
-            };
-            
-            emailjs.send("service_fl4lu2h", "template_iwc9ymh", templateParams)
-                .then(function() {
-                    alert('✅ تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.');
-                    form.reset();
-                })
-                .catch(function(error) {
-                    alert('❌ حدث خطأ. يرجى التواصل عبر الإيميل:\nBasmaboumedfaa@gmail.com');
-                    console.error('EmailJS Error:', error);
-                })
-                .finally(function() {
-                    btn.textContent = originalText;
-                    btn.disabled = false;
-                });
+            })
+            .then(() => { alert('✅ تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.'); form.reset(); })
+            .catch(err => { alert('❌ حدث خطأ. يرجى التواصل عبر الإيميل:\nBasmaboumedfaa@gmail.com'); console.error(err); })
+            .finally(() => { btn.textContent = originalText; btn.disabled = false; });
         });
         
         // ========== زر طلب الانضمام ==========
         document.getElementById('joinSubmitBtn').addEventListener('click', async function() {
             const form = document.getElementById('joinForm');
-            
             const name = document.getElementById('j_name').value.trim();
-            const age = document.getElementById('j_age').value.trim();
-            const wilaya = document.getElementById('j_wilaya').value.trim();
+            const age = document.getElementById('j_age').value;
+            const wilaya = document.getElementById('j_wilaya').value;
+            const baladiya = document.getElementById('j_baladiya').value;
             const phone = document.getElementById('j_phone').value.trim();
             
-            if (!name || !age || !wilaya || !phone) {
-                alert('⚠️ يرجى ملء جميع الحقول المطلوبة (الاسم، العمر، الولاية، الهاتف).');
+            if (!name || !age || !wilaya || !baladiya || !phone) {
+                alert('⚠️ يرجى ملء جميع الحقول المطلوبة (الاسم، العمر، الولاية، البلدية، الهاتف).');
                 return;
             }
             
             const joinData = {
-                name: name,
-                age: age,
-                wilaya: wilaya,
-                phone: phone,
+                name, age, wilaya, baladiya, phone,
                 email: document.getElementById('j_email').value.trim() || 'غير مذكور',
                 skills: document.getElementById('j_skills').value.trim() || 'غير مذكور',
                 motivation: document.getElementById('j_motivation').value.trim() || 'غير مذكور'
@@ -360,18 +387,10 @@
             btn.textContent = 'جاري إرسال طلبك...';
             btn.disabled = true;
             
-            console.log('Sending to Telegram:', joinData);
-            
             const result = await sendToTelegram(joinData);
             
-            if (result.success) {
-                alert('✅ تم تقديم طلب انضمامك بنجاح!\n\nوصل طلبك لمجموعة تيليجرام.\nسنتواصل معك قريباً.');
-                form.reset();
-            } else {
-                alert('❌ فشل الإرسال.\n\nيرجى التواصل معنا مباشرة:\n📧 Basmaboumedfaa@gmail.com\n📞 0776024950');
-                console.error('Error:', result.error);
-            }
-            
+            alert(result.success ? '✅ تم تقديم طلب انضمامك بنجاح!\n\nوصل طلبك لمجموعة تيليجرام.' : '❌ فشل الإرسال.\n\nيرجى التواصل عبر:\n📧 Basmaboumedfaa@gmail.com\n📞 0776024950');
+            if (result.success) form.reset();
             btn.textContent = originalText;
             btn.disabled = false;
         });

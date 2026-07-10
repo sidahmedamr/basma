@@ -195,7 +195,7 @@
             <h2 class="map-title" data-translate="map_title">موقعنا على الخريطة</h2>
         </div>
         <div class="map-container">
-                        <iframe 
+            <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3233.5!2d2.4699042!3d36.3675019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128f6345e6278bef%3A0xb0aa91511410bc25!2z2YXYp9mG2Kkg2KjZhNmD2YTZitipINio2YjZhdmD2YbYp9mF2Kk!5e0!3m2!1sar!2sdz!4v1690000000000!5m2!1sar!2sdz"
                 width="100%" 
                 height="400" 
@@ -301,10 +301,9 @@
             }
         });
         
-                // ========== إرسال لتليجرام ==========
+        // ========== إرسال لتليجرام (HTML mode) ==========
         async function sendToTelegram(joinData) {
             
-            // الحصول على اسم الولاية بدل الرقم
             let wilayaName = joinData.wilaya;
             if (typeof algeriaWilayas !== 'undefined') {
                 const found = algeriaWilayas.find(w => w.code === joinData.wilaya);
@@ -312,23 +311,23 @@
             }
             
             const message = 
-                "🔔 *طلب انضمام جديد*\\n" +
-                "━━━━━━━━━━━━━━━━━━━━━\\n\\n" +
-                "👤 *الاسم الكامل:*\\n" +
-                "┗ " + joinData.name + "\\n\\n" +
-                "━━━━━━━━━━━━━━━━━━━━━\\n\\n" +
-                "📋 *المعلومات الشخصية:*\\n\\n" +
-                "🎂 *العمر:* " + joinData.age + " سنة\\n" +
-                "📍 *الولاية:* " + wilayaName + "\\n" +
-                "🏙 *البلدية:* " + joinData.baladiya + "\\n" +
-                "📞 *الهاتف:* " + joinData.phone + "\\n" +
-                "📧 *البريد:* " + joinData.email + "\\n\\n" +
-                "━━━━━━━━━━━━━━━━━━━━━\\n\\n" +
-                "🛠 *المهارات والاهتمامات:*\\n" +
-                "┗ " + joinData.skills + "\\n\\n" +
-                "💬 *دوافع الانضمام:*\\n" +
-                "┗ " + joinData.motivation + "\\n\\n" +
-                "━━━━━━━━━━━━━━━━━━━━━\\n" +
+                "🔔 <b>طلب انضمام جديد</b>\n" +
+                "━━━━━━━━━━━━━━━━━━━━━\n\n" +
+                "👤 <b>الاسم الكامل:</b>\n" +
+                "┗ " + joinData.name + "\n\n" +
+                "━━━━━━━━━━━━━━━━━━━━━\n\n" +
+                "📋 <b>المعلومات الشخصية:</b>\n\n" +
+                "🎂 <b>العمر:</b> " + joinData.age + " سنة\n" +
+                "📍 <b>الولاية:</b> " + wilayaName + "\n" +
+                "🏙 <b>البلدية:</b> " + joinData.baladiya + "\n" +
+                "📞 <b>الهاتف:</b> " + joinData.phone + "\n" +
+                "📧 <b>البريد:</b> " + joinData.email + "\n\n" +
+                "━━━━━━━━━━━━━━━━━━━━━\n\n" +
+                "🛠 <b>المهارات والاهتمامات:</b>\n" +
+                "┗ " + joinData.skills + "\n\n" +
+                "💬 <b>دوافع الانضمام:</b>\n" +
+                "┗ " + joinData.motivation + "\n\n" +
+                "━━━━━━━━━━━━━━━━━━━━━\n" +
                 "📅 " + new Date().toLocaleDateString('ar-DZ', { 
                     weekday: 'long', 
                     year: 'numeric', 
@@ -347,7 +346,7 @@
                         body: JSON.stringify({
                             chat_id: TELEGRAM_CHAT_ID,
                             text: message,
-                            parse_mode: 'Markdown'
+                            parse_mode: 'HTML'
                         })
                     }
                 );

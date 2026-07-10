@@ -1115,6 +1115,57 @@ html[dir="ltr"] .goal-item:hover {
     line-height: 1.7;
 }
 
+/* ========== فقاعة التنبيه (Toast Notification) ========== */
+.toast-notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-120px);
+    padding: 16px 28px;
+    border-radius: 16px;
+    color: #fff;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-align: center;
+    line-height: 1.7;
+    z-index: 9999;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+    max-width: 90%;
+    min-width: 280px;
+}
+
+.toast-notification.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+.toast-success {
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    border: 2px solid #388E3C;
+}
+
+.toast-error {
+    background: linear-gradient(135deg, #D32F2F, #B71C1C);
+    border: 2px solid #C62828;
+}
+
+.toast-warning {
+    background: linear-gradient(135deg, #FF9800, #E65100);
+    border: 2px solid #EF6C00;
+}
+
+@media (max-width: 480px) {
+    .toast-notification {
+        padding: 14px 20px;
+        font-size: 0.85rem;
+        min-width: auto;
+        width: 90%;
+    }
+}
+
 /* ========== صفحة اتصل بنا - معلومات التواصل ========== */
 .contact-section {
     padding: 60px 0;

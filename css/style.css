@@ -1615,6 +1615,12 @@ html[dir="ltr"] .footer-col h4::after {
     color: #999;
 }
 
+/* ========== نموذج التواصل وسط الصفحة ========== */
+.contact-form-centered {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
 /* ========== زر العودة للأعلى ========== */
 .scroll-top-btn {
     position: fixed;

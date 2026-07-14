@@ -229,6 +229,34 @@ const translations = {
         goals_brief: 'We strive to build a conscious and creative generation capable of leading positive change in society',
         projects_brief: 'Voluntary, educational, and recreational projects serving the youth of the region',
         read_more: 'Read More',
+
+        // في القسم العربي
+join: 'انضم إلينا',
+join_subtitle: 'قدم طلب انضمامك لفريق بصمة وكن جزءاً من التغيير',
+join_form_title: 'نموذج طلب الانضمام',
+benefit1_title: 'فريق مميز',
+benefit1_text: 'انضم إلى مجموعة من الشباب الطموح والفاعل في المجتمع',
+benefit2_title: 'تطوير المهارات',
+benefit2_text: 'اكتسب مهارات جديدة في القيادة والتنظيم والعمل الجماعي',
+benefit3_title: 'خدمة المجتمع',
+benefit3_text: 'شارك في أنشطة تطوعية هادفة تخدم منطقتك ومجتمعك',
+benefit4_title: 'شهادة معتمدة',
+benefit4_text: 'احصل على شهادة عضوية وخبرة معترف بها في سجلك',
+terms_text: 'أوافق على القانون الأساسي للجمعية وألتزم بأهدافها وقيمها',
+
+// في القسم الإنجليزي
+join: 'Join Us',
+join_subtitle: 'Submit your application to join the Basma team and be part of the change',
+join_form_title: 'Join Request Form',
+benefit1_title: 'Amazing Team',
+benefit1_text: 'Join a group of ambitious and active youth in the community',
+benefit2_title: 'Skill Development',
+benefit2_text: 'Gain new skills in leadership, organization, and teamwork',
+benefit3_title: 'Community Service',
+benefit3_text: 'Participate in meaningful volunteer activities that serve your region',
+benefit4_title: 'Certified Membership',
+benefit4_text: 'Get a membership certificate and recognized experience on your record',
+terms_text: 'I agree to the association bylaws and commit to its goals and values',
         
         // Footer
         footer_desc: 'Basma Cultural Youth Association - Boumedfaa - Dar Chebab Zouaoui Baghdad',

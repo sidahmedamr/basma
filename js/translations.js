@@ -8,7 +8,7 @@ const translations = {
         announcements: 'الإعلانات',
         goals: 'أهدافنا',
         projects: 'أعمالنا',
-        contact: 'اتصل بنا وإنضم',
+        contact: 'اتصل بنا',
         
         // الواجهة
         association_full_name: 'الجمعية الثقافية الشبابية بصمة',
@@ -86,8 +86,8 @@ const translations = {
         project6_title: 'دروس الدعم المدرسي',
         project6_text: 'دروس مجانية لتلاميذ المنطقة في مختلف المواد',
         
-        // اتصل بنا وإنضم
-        contact_title: 'اتصل بنا وإنضم',
+        // اتصل بنا
+        contact_title: 'اتصل بنا',
         contact_subtitle: 'نحن هنا للإجابة على استفساراتكم وتلقي اقتراحاتكم',
         contact_info_title: 'معلومات التواصل',
         address_label: 'العنوان',
@@ -113,7 +113,7 @@ const translations = {
         // التذييل
         footer_desc: 'الجمعية الثقافية الشبابية بصمة - بلدية بومدفع - دار الشباب زواوي بغدادي',
         quick_links: 'روابط سريعة',
-        contact_us: 'اتصل بنا وإنضم',
+        contact_us: 'اتصل بنا',
         address: 'دار الشباب زواوي بغدادي، بومدفع',
         follow_us: 'تابعنا',
         rights: 'من تصميم عمراوي سيداحمد',

@@ -183,6 +183,28 @@ const translations = {
         goal5_text: 'Offering computer and technology courses to keep up with the digital age',
         goal6_title: 'Charitable Work',
         goal6_text: 'Organizing solidarity convoys and assisting vulnerable groups in the region',
+
+        // عربي
+gender_label: 'الجنس',
+section_personal: 'المعلومات الشخصية',
+section_education: 'الدراسة والعمل',
+section_experience: 'الخبرة الجمعوية',
+section_skills: 'المهارات والدوافع',
+education_label: 'المستوى الدراسي',
+job_label: 'المهنة أو التخصص',
+other_association_label: 'هل أنت عضو في جمعية أخرى؟',
+other_association_name_label: 'اسم الجمعية الأخرى',
+
+// إنجليزي
+gender_label: 'Gender',
+section_personal: 'Personal Information',
+section_education: 'Education & Work',
+section_experience: 'Association Experience',
+section_skills: 'Skills & Motivation',
+education_label: 'Education Level',
+job_label: 'Profession or Specialization',
+other_association_label: 'Are you a member of another association?',
+other_association_name_label: 'Name of the other association',
         
         // Projects
         projects_title: 'Our Work & Projects',

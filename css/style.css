@@ -1615,6 +1615,30 @@ html[dir="ltr"] .footer-col h4::after {
     color: #999;
 }
 
+/* ========== عنوان القسم في النموذج ========== */
+.form-section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 25px 0 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-bg);
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.form-section-title i {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: var(--primary-bg);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+}
 /* ========== نموذج التواصل وسط الصفحة ========== */
 .contact-form-centered {
     max-width: 650px;

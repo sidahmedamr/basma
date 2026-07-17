@@ -11,10 +11,28 @@
     --black: #000000;
     --gray-100: #f5f5f5;
     --gray-200: #e0e0e0;
+    --gray-400: #999999;
+    --gray-500: #888888;
+    --gray-600: #666666;
     --gray-700: #333333;
     --gray-800: #1a1a1a;
     --gray-900: #111111;
-    
+
+    /* ألوان الحالة والتنبيهات */
+    --danger: #D32F2F;
+    --danger-dark: #B71C1C;
+    --danger-darker: #C62828;
+    --warning: #FF9800;
+    --warning-dark: #E65100;
+    --warning-darker: #EF6C00;
+    --gold: #FFD700;
+    --gold-dark: #FFA000;
+    --accent-orange: #FF6B35;
+
+    /* درجات إضافية من اللون الأساسي (للتدرجات) */
+    --primary-darker: #2E7D32;
+    --primary-darkest: #1B5E20;
+
     /* متغيرات خاصة */
     --text-color: #333333;
     --bg-color: #ffffff;
@@ -275,7 +293,7 @@ select:disabled {
 }
 
 .title-main {
-    color: #4CAF50;
+    color: var(--primary);
     display: block;
 }
 
@@ -307,22 +325,10 @@ select:disabled {
     display: flex;
     align-items: center;
     gap: 10px;
+    padding: 12px 24px;
     background: var(--primary);
     color: var(--white);
     border: 2px solid var(--primary);
-}
-
-.btn-download.pdf-btn {
-    background: #D32F2F;
-    border-color: #D32F2F;
-}
-
-.btn-download.pdf-btn:hover {
-    background: #B71C1C;
-    border-color: #B71C1C;
-    box-shadow: 0 10px 25px rgba(211, 47, 47, 0.4);
-}
-    padding: 12px 24px;
     border-radius: 50px;
     font-family: 'Cairo', sans-serif;
     font-weight: 700;
@@ -330,6 +336,17 @@ select:disabled {
     cursor: pointer;
     transition: var(--transition);
     text-decoration: none;
+}
+
+.btn-download.pdf-btn {
+    background: var(--danger);
+    border-color: var(--danger);
+}
+
+.btn-download.pdf-btn:hover {
+    background: var(--danger-dark);
+    border-color: var(--danger-dark);
+    box-shadow: 0 10px 25px rgba(211, 47, 47, 0.4);
 }
 
 .btn-download:hover {
@@ -496,7 +513,7 @@ select:disabled {
 
 .card-text {
     font-size: 0.95rem;
-    color: #666;
+    color: var(--gray-600);
     margin-bottom: 20px;
     line-height: 1.7;
 }
@@ -586,7 +603,7 @@ select:disabled {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #FFD700, #FFA000);
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
     color: var(--white);
     display: flex;
     align-items: center;
@@ -622,7 +639,7 @@ html[dir="ltr"] .founder-badge {
 
 .founder-bio {
     font-size: 0.95rem;
-    color: #666;
+    color: var(--gray-600);
     line-height: 1.8;
     margin-bottom: 20px;
 }
@@ -779,10 +796,6 @@ html[dir="ltr"] .member-icon {
     flex-direction: row-reverse;
 }
 
-html[dir="ltr"] .about-block.reverse {
-    flex-direction: row-reverse;
-}
-
 .about-text {
     flex: 1;
 }
@@ -911,7 +924,7 @@ html[dir="ltr"] .mission-box {
 
 .value-card p {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--gray-600);
 }
 
 /* ========== صفحة الإعلانات ========== */
@@ -964,7 +977,7 @@ html[dir="ltr"] .mission-box {
 
 .announcement-date {
     font-size: 0.85rem;
-    color: #888;
+    color: var(--gray-500);
     margin-bottom: 10px;
     display: flex;
     align-items: center;
@@ -979,7 +992,7 @@ html[dir="ltr"] .mission-box {
 
 .announcement-body p {
     font-size: 0.95rem;
-    color: #666;
+    color: var(--gray-600);
     line-height: 1.7;
 }
 
@@ -1042,7 +1055,7 @@ html[dir="ltr"] .goal-item:hover {
 
 .goal-content p {
     font-size: 0.95rem;
-    color: #666;
+    color: var(--gray-600);
     line-height: 1.7;
 }
 
@@ -1096,7 +1109,7 @@ html[dir="ltr"] .goal-item:hover {
 
 .project-date {
     font-size: 0.85rem;
-    color: #888;
+    color: var(--gray-500);
     margin-bottom: 10px;
     display: flex;
     align-items: center;
@@ -1111,7 +1124,7 @@ html[dir="ltr"] .goal-item:hover {
 
 .project-body p {
     font-size: 0.95rem;
-    color: #666;
+    color: var(--gray-600);
     line-height: 1.7;
 }
 
@@ -1123,7 +1136,7 @@ html[dir="ltr"] .goal-item:hover {
     transform: translateX(-50%) translateY(-120px);
     padding: 16px 28px;
     border-radius: 16px;
-    color: #fff;
+    color: var(--white);
     font-family: 'Cairo', sans-serif;
     font-weight: 600;
     font-size: 0.95rem;
@@ -1143,18 +1156,18 @@ html[dir="ltr"] .goal-item:hover {
 }
 
 .toast-success {
-    background: linear-gradient(135deg, #4CAF50, #2E7D32);
-    border: 2px solid #388E3C;
+    background: linear-gradient(135deg, var(--primary), var(--primary-darker));
+    border: 2px solid var(--primary-dark);
 }
 
 .toast-error {
-    background: linear-gradient(135deg, #D32F2F, #B71C1C);
-    border: 2px solid #C62828;
+    background: linear-gradient(135deg, var(--danger), var(--danger-dark));
+    border: 2px solid var(--danger-darker);
 }
 
 .toast-warning {
-    background: linear-gradient(135deg, #FF9800, #E65100);
-    border: 2px solid #EF6C00;
+    background: linear-gradient(135deg, var(--warning), var(--warning-dark));
+    border: 2px solid var(--warning-darker);
 }
 
 @media (max-width: 480px) {
@@ -1214,7 +1227,7 @@ html[dir="ltr"] .goal-item:hover {
 
 .contact-info-card p,
 .contact-info-card a {
-    color: #666;
+    color: var(--gray-600);
     font-size: 0.85rem;
     transition: var(--transition);
 }
@@ -1265,7 +1278,7 @@ html[dir="ltr"] .goal-item:hover {
 
 .form-box-header p {
     font-size: 0.9rem;
-    color: #888;
+    color: var(--gray-500);
 }
 
 /* نموذج الانضمام بتنسيق مميز */
@@ -1274,7 +1287,7 @@ html[dir="ltr"] .goal-item:hover {
 }
 
 .join-header i {
-    color: #FF6B35;
+    color: var(--accent-orange);
 }
 
 /* صف من حقلين */
@@ -1330,13 +1343,13 @@ html[dir="ltr"] .goal-item:hover {
     cursor: pointer;
     transition: var(--transition);
     font-family: 'Cairo', sans-serif;
-    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    background: linear-gradient(135deg, var(--primary), var(--primary-darker));
     color: var(--white);
-    border-color: #4CAF50;
+    border-color: var(--primary);
 }
 
 .btn-join:hover {
-    background: linear-gradient(135deg, #388E3C, #1B5E20);
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-darkest));
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(76, 175, 80, 0.4);
 }
@@ -1351,7 +1364,7 @@ html[dir="ltr"] .goal-item:hover {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    background: linear-gradient(135deg, #D32F2F, #B71C1C);
+    background: linear-gradient(135deg, var(--danger), var(--danger-dark));
     color: var(--white);
     padding: 16px 32px;
     border-radius: 50px;
@@ -1436,7 +1449,7 @@ html[dir="ltr"] .goal-item:hover {
 
 .benefit-card p {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--gray-600);
     line-height: 1.6;
 }
 
@@ -1612,7 +1625,7 @@ html[dir="ltr"] .footer-col h4::after {
     text-align: center;
     padding: 20px 0;
     font-size: 0.9rem;
-    color: #999;
+    color: var(--gray-400);
 }
 
 /* ========== عنوان القسم في النموذج ========== */
